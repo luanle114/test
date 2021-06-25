@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+                font-family: system-ui;
+                background: #f06d06;
+                color: white;
+                text-align: center;
+            }
+            table, th, td {
+                border: 1px solid black;
+                border-collapse: collapse;
+            }
+            th{
+                width: 33%;
+            }
+            table{
+                width: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <form id="forms">
+            <table>
+                <tr>
+                  <th>Bai 1</th>
+                  <th>Bai 2</th>
+                  <th>Bai 3</th>
+                </tr>
+                <tr>
+                  <th>
+                    <p id="dataEx1"></p>
+                  </th>
+                  <th>
+                    
+                  </th>
+                  <th>
+                    <input id="inputEx2" ></input>
+                    <button>Check</button>
+                  </th>
+                </tr>
+                <tr>
+                  <th>
+                    <p id=result1></p>
+                  </th>
+                  <th></th>
+                  <th>
+                    <p id="result3"></p>
+                  </th>
+                </tr>
+            </table>
+        </form>
+        
+    </body>
+    <script>
+        let arr = [0, 34, 55, 72, 13, 44];
+        const arr_js = document.getElementById("dataEx1");
+        arr_js.innerText = arr
+
+        let max1 = arr[0];
+        let max2 = arr[1];
+        for(var i = 0; i < arr.length; i++){
+            if(arr[i] > max1){
+                max2 = max1;
+                max1 = arr[i];
+            }
+            else if(arr[i] > max2){
+                arr[i] = max2;
+            }
+        }
+        const result_js = document.getElementById("result1");
+        result_js.innerText = max2
+
+
+        let inputEx2 = document.getElementById("inputEx2");
+        if(inputEx2 == ""){
+            alert('Khong duoc de trong');
+        }
+        let a = 123;
+        let b = a.toString();
+        let result = '';
+        for (let i = b.length-1; i >= 0; i--){
+            result = result+b[i]
+        }
+        let result_3 = document.getElementById("result3");
+        if(result === a){
+            result_3.innerText = 'Đây là số đối xứng';
+        }
+        else{
+            result_3.innerText = 'Đây là số không đối xứng';
+        }
+
+    </script>
+</html>
